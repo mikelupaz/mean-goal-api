@@ -10,7 +10,9 @@ const {
   searchGoals,
 } = require("../controllers/goalController");
 
-router.route("/").get(getGoals).post(addGoals);
-router.route("/:id").delete(deleteGoals).put(updateGoals);
-router.get("/search", searchGoals);
+const { protect } = require("../middleware/authMiddleware");
+
+router.route("/").get(protect, getGoals).post(protect, addGoals);
+router.route("/:id").delete(protect, deleteGoals).put(protect, updateGoals);
+router.get("/search", protect, searchGoals);
 module.exports = router;
