@@ -8,7 +8,7 @@
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js"
   },
-  "author": "Mikel P",
+  "author": "Mikel Paz",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
